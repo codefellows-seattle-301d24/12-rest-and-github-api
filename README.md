@@ -37,7 +37,7 @@ When you are finished with lab, follow these steps to submit your work. Create o
  - You already have an `aboutController.js`,
  - so we need to add a `repo.js` model file,
  - and a `repoView.js` presentation layer.
- - GitHub API credentials should be stored in a local file (`githubToken.js`), but not committed to GitHub. Use `.gitignore` to prevent the file from being tracked (get help in lab if you don't know how to use `.gitignore`).
+ - GitHub API credentials should be stored in your environment as an environment variable, and accessed in the backend from `process.env.GITHUB_TOKEN`.
 - As the site owner, I want to highlight certain repos on my `/about` page so that everyone can see the great projects I am working on.
  - Retrieve and manipulate repo info in your model file.
  - You can choose exactly what API end point to use.
@@ -46,7 +46,7 @@ When you are finished with lab, follow these steps to submit your work. Create o
 - Ensure your code passes ESLint.
 - Place all code within the proper layer of MVC abstraction and encapsulation.
 - Use an authenticated AJAX call to GitHub's API to get your repos.
-- DO NOT publish your GitHub Token to any public repo.
+
 
 #### Stretch Goals  
 
