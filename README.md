@@ -2,7 +2,7 @@
 =======
 [Code of Conduct](https://github.com/codefellows/code-of-conduct)
 
-Now that we understand how applications can handle different URLs, we can write code that communicates with other applications. Let each partner try out their own user info to get the chance to see their repos with their token. For today, please create a `githubToken.js` file in the root of your app. Open this file, create a variable, and store your access token. Add the new file to your `.gitignore` in the terminal by running `echo githubToken.js >> .gitignore`
+Now that we understand how applications can handle different URLs, we can write code that communicates with other applications. Let each partner try out their own user info to get the chance to see their repos with their token. 
 
 ## Submission Instructions
 When you are finished with lab, follow these steps to submit your work. Create one Pull Request (aka: "PR") from your Forked repo to the CF repo with your changes, and you'll each submit that same PR link in Canvas.
