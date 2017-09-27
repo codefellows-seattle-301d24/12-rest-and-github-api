@@ -14,6 +14,7 @@ var app = app || {};
     $.get('/github/user/repos')
       .then(function(data){
         repos.all = data;
+        console.log(data);
       },
       function(err){
         console.error(err);
