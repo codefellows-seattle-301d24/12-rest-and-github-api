@@ -32,7 +32,6 @@ app.get('/github/*', proxyGitHub);
 
 function proxyGitHub(req, res){
   console.log('Routing a GitHub AJAX request for ', req.params[0]);
-  console.log(res);
   (requestProxy({
     url: `https://api.github.com/${req.params[0]}`,
     headers: {
