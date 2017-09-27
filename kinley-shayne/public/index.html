@@ -26,7 +26,7 @@
       </article>
     </script>
 
-    <!-- TODO: We have a new Handlebars template! Help fill in a few expressions: -->
+    <!-- DONE: We have a new Handlebars template! Help fill in a few expressions: -->
     <script id="repo-template" type="text/x-handlebars-template">
       <li>
         <a href="{{html_url}}" target="_blank">
@@ -36,9 +36,9 @@
         <p>Language: {{ language }}</p>
         <p>Created: {{ created_at }}</p>
         <p>Last updated: {{ updated_at }}</p>
-        {{ #if watchers_count }}
+        {{#if watchers_count}}
           <p>{{ watchers_count }} watching this repo</p>
-        {{ /if }}
+        {{/if}}
       </li>
     </script>
   </head>
