@@ -16,21 +16,6 @@ var app = app || {};
       repos.all = data;
       callback();
     })
-
-    // Article.loadAll = rows => {
-    //   Article.all = rows.map(ele => new Article(ele));
-    // };
-    //
-    // Article.fetchAll = callback => {
-    //   $.get('/articles')
-    //   .then(
-    //     results => {
-    //       Article.loadAll(results);
-    //       callback();
-    //     }
-    //   )
-    // };
-
   };
 
   // REVIEW: Model method that filters the full collection for repos with a particular attribute.
