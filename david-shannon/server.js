@@ -4,6 +4,7 @@ const pg = require('pg');
 const fs = require('fs');
 const express = require('express');
 const bodyParser = require('body-parser');
+const requestProxy = require('express-request-proxy');
 const PORT = process.env.PORT || 3000;
 const app = express();
 // const conString = 'postgres://USERNAME:PASSWORD@HOST:PORT';
@@ -28,11 +29,14 @@ app.get('/articles', (request, response) => {
   .catch(console.error);
 });
 
-// TODO: Whenever a "get" request is sent to a route starting with "/github/", use the remainder of that url to access github, with your token as the Authorization header. You should *only* make direct requests to Github from server.js, not from the front-end. What you send back will be a collection of repositories, as an array of objects.
+// DONE: Whenever a "get" request is sent to a route starting with "/github/", use the remainder of that url to access github, with your token as the Authorization header. You should *only* make direct requests to Github from server.js, not from the front-end. What you send back will be a collection of repositories, as an array of objects.
 
-app.get('/github/:id', function(){
-  
-})
+app.get('/github/*', requestProxy({
+  url: `https://api.github.com/*`,
+  headers: {
+    Authorization: `token ${process.env.GITHUB_TOKEN}`
+  }
+}));
 
 app.post('/articles', function(request, response) {
   client.query(
