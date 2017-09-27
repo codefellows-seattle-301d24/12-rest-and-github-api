@@ -11,10 +11,10 @@ var app = app || {};
     $about.find('ul').empty();
     $about.show().siblings().hide();
   };
-
+  // console.log($('#repo-template').text());
   // DONE: Remember that new Handlebars template? Let's compile it!
   // Save the result in this `render` variable.
-  let render = Handlebars.compile('#repo-template').text();
+  let render = Handlebars.compile($('#repo-template').text());
   repoView.index = function() {
     ui();
 
