@@ -14,6 +14,7 @@ var app = app || {};
 
   // TODO: Remember that new Handlebars template? Let's compile it!
   // Save the result in this `render` variable.
+  var template = Handlebars.compile($('#repo-template'))
 
   repoView.index = function() {
     ui();

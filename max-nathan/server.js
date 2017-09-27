@@ -7,7 +7,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 3000;
 const app = express();
-const conString = 'postgres://postgres:postgressPASSWORD123@localhost:5432'; // DONE: Don't forget to set your own conString
+const conString = 'postgres://postgres:potato@localhost:5432'; // DONE: Don't forget to set your own conString
 const client = new pg.Client(conString);
 client.connect();
 client.on('error', err => console.error(err));
@@ -32,10 +32,11 @@ app.get('/github/*', proxyGitHub);
 
 function proxyGitHub(req, res, next){
   console.log('Routing a GitHub AJAX request for ', req.params[0]);
+  console.log(res);
   (requestProxy({
     url: `https://api.github.com/${req.params[0]}`,
     headers: {
-      Authorization: `token ${process.env.GITHUB_TOKEN}`
+      Authorization: `token ${GITHUB_TOKEN}`
     }
   }))(req, res);
 }
