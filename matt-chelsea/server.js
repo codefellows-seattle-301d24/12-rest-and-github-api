@@ -29,18 +29,13 @@ app.get('/articles', (request, response) => {
   .catch(console.error);
 });
 
-// TODO: Whenever a "get" request is sent to a route starting with "/github/", use the remainder of that url to access github, with your token as the Authorization header. You should *only* make direct requests to Github from server.js, not from the front-end. What you send back will be a collection of repositories, as an array of objects.
-app.get('/github/*', proxyGithub);
-
-function proxyGitHub(req, res, next){
-  console.log(`Routing a GitHub AJAX request for`, req.params[0]);
-  (requestProxy({
-    url: `https://api.github.com/${req.params[0]}`,
-    headers: {
-      Authorization: `token ${process.env.GITHUB_TOKEN}`
-    }
-  }))(req, res);
-}
+// DONE: Whenever a "get" request is sent to a route starting with "/github/", use the remainder of that url to access github, with your token as the Authorization header. You should *only* make direct requests to Github from server.js, not from the front-end. What you send back will be a collection of repositories, as an array of objects.
+app.get('/github/*', requestProxy( {
+  url: `https://api.github.com/*`,
+  headers: {
+    Authorization: `token ${process.env.GITHUB_TOKEN}`
+  }
+}));
 
 app.post('/articles', function(request, response) {
   client.query(
