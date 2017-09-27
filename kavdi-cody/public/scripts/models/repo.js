@@ -15,6 +15,7 @@ var app = app || {};
       repo.map(ele => {
         repos.all.push(ele);
       })
+      callback();
     })
   };
 
