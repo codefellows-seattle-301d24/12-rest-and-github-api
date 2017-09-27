@@ -8,7 +8,7 @@ const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 3000;
 const app = express();
 // const conString = 'postgres://USERNAME:PASSWORD@HOST:PORT';
-const conString = 'postgres://localhost5432/kilovolt'; // DONE: Don't forget to set your own conString
+const conString = 'postgres://localhost:5432/kilovolt'; // DONE: Don't forget to set your own conString
 const client = new pg.Client(conString);
 
 client.connect();
@@ -38,8 +38,7 @@ function proxyGithub(req, res) {
   (expressProxy({
     url: `https://api.github.com/${req.params[0]}`,
     headers: {
-      Authorization: `token
-      ${process.env.githubToken}`
+      Authorization: `token ${process.env.github_token}`
     }
   }))(req, res);
 }
