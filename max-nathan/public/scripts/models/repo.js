@@ -13,6 +13,7 @@ var app = app || {};
     //       populate it with the response from Github before you call the callback.
     $.get('/github/user/repos')
       .then(results => {
+        console.log(results);
         repos.all = results;
       }, err =>{
         console.error(err);
