@@ -34,7 +34,7 @@ app.get('/github/*', proxyGitHub);
 
 function proxyGitHub(req, res, next){
   (requestProxy({
-    url: `https://api.github.com/users/${req.params[0]}`,
+    url: `https://api.github.com/${req.params[0]}`,
     headers: {
       Authorization: `token ${process.env.GITHUB_TOKEN}`
     }
